@@ -54,7 +54,7 @@ Using the data provided in lession 1.3 ( https://github.com/su-ntu-ctp/5m-data-1
 Answer:
 
 ```sql
-
+uuu
 ```
 
 ### Question 3

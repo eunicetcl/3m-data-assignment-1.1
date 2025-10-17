@@ -19,32 +19,50 @@ How can game developers and publishers optimize their strategy to maximize globa
 Which genres contribute the most to global sales?
 
 SQL:
-```sql
+```
+CREATE TABLE vgsales AS
+SELECT * FROM read_csv_auto('/Users/eunicetan/Downloads/vgsales.csv');
 
+SELECT * FROM vgsales;
+
+SELECT Genre, SUM(Global_Sales) AS Total_Global_Sales
+FROM vgsales
+GROUP BY Genre
+ORDER BY Total_Global_Sales DESC;
 ```
 Findings:
 ```findings
+Action - 1751.18
 
 ```
 Which platforms generate the highest global sales?
 
 SQL:
 ```sql
-
+SELECT Platform, SUM(Global_Sales) AS Total_Global_Sales
+FROM vgsales
+GROUP BY Platform
+ORDER BY Total_Global_Sales DESC;
 ```
 Findings:
 ```findings
-
+PS2 - 1255.64
 ```
 Which publishers are the most successful in terms of global sales?
 
 SQL:
 ```sql
+SELECT 
+    Publisher,
+    SUM(Global_Sales) AS Total_Global_Sales
+FROM vgsales
+GROUP BY Publisher
+ORDER BY Total_Global_Sales DESC;
 
 ```
 Findings:
 ```findings
-
+Nintendo : 1786.56
 ```
 How does success vary across regions (North America, Europe, Japan, Others)?
 
